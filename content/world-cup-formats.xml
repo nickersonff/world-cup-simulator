@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<formats>
+	<format id="0" name="Cup48_4groups">
+		<teams>48</teams>
+		<groups>4</groups>
+		<rounds>	
+			<round id="0" func="GroupPhase"/> <!-- from 0 to 71 : all matches from all groups -->
+			<round id="1"> <!-- start knockout phase : 1st and 2st from each group and 8 best 3th (group 13) -->
+				<match id="72" typeHome="p" groupHome= "1" teamHome="0" typeAway="p" groupAway= "13" teamAway="0"/>
+				<match id="73" typeHome="p" groupHome= "2" teamHome="1" typeAway="p" groupAway= "6" teamAway="1"/>
+				<match id="74" typeHome="p" groupHome= "6" teamHome="0" typeAway="p" groupAway= "5" teamAway="1"/>
+				<match id="75" typeHome="p" groupHome= "2" teamHome="0" typeAway="p" groupAway= "13" teamAway="1"/>
+				<match id="76" typeHome="p" groupHome= "5" teamHome="0" typeAway="p" groupAway= "4" teamAway="1"/>
+				<match id="77" typeHome="p" groupHome= "3" teamHome="0" typeAway="p" groupAway= "13" teamAway="2"/>
+				<match id="78" typeHome="p" groupHome= "4" teamHome="0" typeAway="p" groupAway= "13" teamAway="3"/>
+				<match id="79" typeHome="p" groupHome= "1" teamHome="1" typeAway="p" groupAway= "3" teamAway="1"/>
+				<match id="80" typeHome="p" groupHome= "7" teamHome="0" typeAway="p" groupAway= "13" teamAway="4"/>
+				<match id="81" typeHome="p" groupHome= "8" teamHome="1" typeAway="p" groupAway= "12" teamAway="1"/>
+				<match id="82" typeHome="p" groupHome= "12" teamHome="0" typeAway="p" groupAway= "11" teamAway="1"/>
+				<match id="83" typeHome="p" groupHome= "8" teamHome="0" typeAway="p" groupAway= "13" teamAway="5"/>
+				<match id="84" typeHome="p" groupHome= "11" teamHome="0" typeAway="p" groupAway= "10" teamAway="1"/>
+				<match id="85" typeHome="p" groupHome= "9" teamHome="0" typeAway="p" groupAway= "13" teamAway="6"/>
+				<match id="86" typeHome="p" groupHome= "10" teamHome="0" typeAway="p" groupAway= "13" teamAway="7"/>
+				<match id="87" typeHome="p" groupHome= "7" teamHome="1" typeAway="p" groupAway= "9" teamAway="1"/>
+			</round>
+			<round id="2">
+				<match id="88" typeHome="w" matchHome= "72" typeAway="w" matchAway="73"/>
+				<match id="89" typeHome="w" matchHome= "74" typeAway="w" matchAway="75"/>
+				<match id="90" typeHome="w" matchHome= "76" typeAway="w" matchAway="77"/>
+				<match id="91" typeHome="w" matchHome= "78" typeAway="w" matchAway="79"/>
+				<match id="92" typeHome="w" matchHome= "80" typeAway="w" matchAway="81"/>
+				<match id="93" typeHome="w" matchHome= "82" typeAway="w" matchAway="83"/>
+				<match id="94" typeHome="w" matchHome= "84" typeAway="w" matchAway="85"/>
+				<match id="95" typeHome="w" matchHome= "86" typeAway="w" matchAway="87"/>
+			</round>
+			<round id="3">
+				<match id="96" typeHome="w" matchHome= "88" typeAway="w" matchAway="89"/>
+				<match id="97" typeHome="w" matchHome= "90" typeAway="w" matchAway="91"/>
+				<match id="98" typeHome="w" matchHome= "92" typeAway="w" matchAway="93"/>
+				<match id="99" typeHome="w" matchHome= "94" typeAway="w" matchAway="95"/>
+			</round>
+			<round id="4">
+				<match id="100" typeHome="w" matchHome= "96" typeAway="w" matchAway="97"/>
+				<match id="101" typeHome="w" matchHome= "98" typeAway="w" matchAway="99"/>
+			</round>
+			<round id="5">
+				<match id="102" typeHome="l" matchHome= "100" typeAway="l" matchAway="101"/>
+			</round>
+			<round id="6">
+				<match id="103" typeHome="w" matchHome= "100" typeAway="w" matchAway="101"/>
+			</round>
+			
+		</rounds>
+	</format>
+	<format id="1" name="Cup48_3groups">
+		<teams>48</teams>
+		<groups>3</groups>
+		<rounds>	
+			<round id="0">
+				<match id="0" typeHome="p" groupHome= "0"  teamHome="0" typeAway="p" groupAway= "0"  teamAway="1"/>
+				<match id="1" typeHome="p" groupHome= "0"  teamHome="3" typeAway="p" groupAway= "0"  teamAway="4"/>
+				<match id="2" typeHome="p" groupHome= "0"  teamHome="6" typeAway="p" groupAway= "0"  teamAway="7"/>
+				<match id="3" typeHome="p" groupHome= "0"  teamHome="9" typeAway="p" groupAway= "0"  teamAway="10"/>
+				<match id="4" typeHome="p" groupHome= "0"  teamHome="12" typeAway="p" groupAway= "0" teamAway="13"/>
+				<match id="5" typeHome="p" groupHome= "0"  teamHome="15" typeAway="p" groupAway= "0" teamAway="16"/>
+				<match id="6" typeHome="p" groupHome= "0"  teamHome="18" typeAway="p" groupAway= "0" teamAway="19"/>
+				<match id="7" typeHome="p" groupHome= "0"  teamHome="21" typeAway="p" groupAway= "0" teamAway="22"/>
+				<match id="8" typeHome="p" groupHome= "0"  teamHome="24" typeAway="p" groupAway= "0" teamAway="25"/>
+				<match id="9" typeHome="p" groupHome= "0"  teamHome="27" typeAway="p" groupAway= "0" teamAway="28"/>
+				<match id="10" typeHome="p" groupHome= "0" teamHome="30" typeAway="p" groupAway= "0" teamAway="31"/>
+				<match id="11" typeHome="p" groupHome= "0" teamHome="33" typeAway="p" groupAway= "0" teamAway="34"/>
+				<match id="12" typeHome="p" groupHome= "0" teamHome="36" typeAway="p" groupAway= "0" teamAway="37"/>
+				<match id="13" typeHome="p" groupHome= "0" teamHome="39" typeAway="p" groupAway= "0" teamAway="40"/>
+				<match id="14" typeHome="p" groupHome= "0" teamHome="42" typeAway="p" groupAway= "0" teamAway="43"/>
+				<match id="15" typeHome="p" groupHome= "0" teamHome="45" typeAway="p" groupAway= "0" teamAway="46"/>
+			</round>
+			<round id="1">
+				<match id="16" typeHome="p" groupHome= "0" teamHome="2" typeAway="p" groupAway= "0"  teamAway="0" />
+				<match id="17" typeHome="p" groupHome= "0" teamHome="5" typeAway="p" groupAway= "0"  teamAway="3" />
+				<match id="18" typeHome="p" groupHome= "0" teamHome="8" typeAway="p" groupAway= "0"  teamAway="6" />
+				<match id="19" typeHome="p" groupHome= "0" teamHome="11" typeAway="p" groupAway= "0" teamAway="9" />
+				<match id="20" typeHome="p" groupHome= "0" teamHome="14" typeAway="p" groupAway= "0" teamAway="12"/>
+				<match id="21" typeHome="p" groupHome= "0" teamHome="17" typeAway="p" groupAway= "0" teamAway="15"/>
+				<match id="22" typeHome="p" groupHome= "0" teamHome="20" typeAway="p" groupAway= "0" teamAway="18"/>
+				<match id="23" typeHome="p" groupHome= "0" teamHome="23" typeAway="p" groupAway= "0" teamAway="21"/>
+				<match id="24" typeHome="p" groupHome= "0" teamHome="26" typeAway="p" groupAway= "0" teamAway="24"/>
+				<match id="25" typeHome="p" groupHome= "0" teamHome="29" typeAway="p" groupAway= "0" teamAway="27"/>
+				<match id="26" typeHome="p" groupHome= "0" teamHome="32" typeAway="p" groupAway= "0" teamAway="30"/>
+				<match id="27" typeHome="p" groupHome= "0" teamHome="35" typeAway="p" groupAway= "0" teamAway="33"/>
+				<match id="28" typeHome="p" groupHome= "0" teamHome="38" typeAway="p" groupAway= "0" teamAway="36"/>
+				<match id="29" typeHome="p" groupHome= "0" teamHome="41" typeAway="p" groupAway= "0" teamAway="39"/>
+				<match id="30" typeHome="p" groupHome= "0" teamHome="44" typeAway="p" groupAway= "0" teamAway="42"/>
+				<match id="31" typeHome="p" groupHome= "0" teamHome="47" typeAway="p" groupAway= "0" teamAway="45"/>
+			</round>
+			<round id="2">
+				<match id="32" typeHome="p" groupHome= "0" teamHome="1" typeAway="p" groupAway= "0" teamAway="2"/>
+				<match id="33" typeHome="p" groupHome= "0" teamHome="4" typeAway="p" groupAway= "0" teamAway="5"/>
+				<match id="34" typeHome="p" groupHome= "0" teamHome="7" typeAway="p" groupAway= "0" teamAway="8"/>
+				<match id="35" typeHome="p" groupHome= "0" teamHome="10" typeAway="p" groupAway= "0" teamAway="11"/>
+				<match id="36" typeHome="p" groupHome= "0" teamHome="13" typeAway="p" groupAway= "0" teamAway="14"/>
+				<match id="37" typeHome="p" groupHome= "0" teamHome="16" typeAway="p" groupAway= "0" teamAway="17"/>
+				<match id="38" typeHome="p" groupHome= "0" teamHome="19" typeAway="p" groupAway= "0" teamAway="20"/>
+				<match id="39" typeHome="p" groupHome= "0" teamHome="22" typeAway="p" groupAway= "0" teamAway="23"/>
+				<match id="40" typeHome="p" groupHome= "0" teamHome="25" typeAway="p" groupAway= "0" teamAway="26"/>
+				<match id="41" typeHome="p" groupHome= "0" teamHome="28" typeAway="p" groupAway= "0" teamAway="29"/>
+				<match id="42" typeHome="p" groupHome= "0" teamHome="31" typeAway="p" groupAway= "0" teamAway="32"/>
+				<match id="43" typeHome="p" groupHome= "0" teamHome="34" typeAway="p" groupAway= "0" teamAway="35"/>
+				<match id="44" typeHome="p" groupHome= "0" teamHome="37" typeAway="p" groupAway= "0" teamAway="38"/>
+				<match id="45" typeHome="p" groupHome= "0" teamHome="40" typeAway="p" groupAway= "0" teamAway="41"/>
+				<match id="46" typeHome="p" groupHome= "0" teamHome="43" typeAway="p" groupAway= "0" teamAway="44"/>
+				<match id="47" typeHome="p" groupHome= "0" teamHome="46" typeAway="p" groupAway= "0" teamAway="47"/>
+			</round>
+			<round id="3" func="compute">
+				<match id="48" typeHome="p" groupHome= "1" teamHome="0" typeAway="p" groupAway= "2" teamAway="1"/>
+				<match id="49" typeHome="p" groupHome= "2" teamHome="0" typeAway="p" groupAway= "1" teamAway="1"/>
+				<match id="50" typeHome="p" groupHome= "3" teamHome="0" typeAway="p" groupAway= "4" teamAway="1"/>
+				<match id="51" typeHome="p" groupHome= "4" teamHome="0" typeAway="p" groupAway= "3" teamAway="1"/>
+				<match id="52" typeHome="p" groupHome= "5" teamHome="0" typeAway="p" groupAway= "6" teamAway="1"/>
+				<match id="53" typeHome="p" groupHome= "6" teamHome="0" typeAway="p" groupAway= "5" teamAway="1"/>
+				<match id="54" typeHome="p" groupHome= "7" teamHome="0" typeAway="p" groupAway= "8" teamAway="1"/>
+				<match id="55" typeHome="p" groupHome= "8" teamHome="0" typeAway="p" groupAway= "7" teamAway="1"/>
+				<match id="56" typeHome="p" groupHome= "9" teamHome="0" typeAway="p" groupAway= "10" teamAway="1"/>
+				<match id="57" typeHome="p" groupHome= "10" teamHome="0" typeAway="p" groupAway= "9" teamAway="1"/>
+				<match id="58" typeHome="p" groupHome= "11" teamHome="0" typeAway="p" groupAway= "12" teamAway="1"/>
+				<match id="59" typeHome="p" groupHome= "12" teamHome="0" typeAway="p" groupAway= "11" teamAway="1"/>
+				<match id="60" typeHome="p" groupHome= "13" teamHome="0" typeAway="p" groupAway= "14" teamAway="1"/>
+				<match id="61" typeHome="p" groupHome= "14" teamHome="0" typeAway="p" groupAway= "13" teamAway="1"/>
+				<match id="62" typeHome="p" groupHome= "15" teamHome="0" typeAway="p" groupAway= "16" teamAway="1"/>
+				<match id="63" typeHome="p" groupHome= "16" teamHome="0" typeAway="p" groupAway= "15" teamAway="1"/>
+			</round>
+			<round id="4">
+				<match id="64" typeHome="w" matchHome= "48" typeAway="w" matchAway= "50"/>
+				<match id="65" typeHome="w" matchHome= "49" typeAway="w" matchAway= "51"/>
+				<match id="66" typeHome="w" matchHome= "52" typeAway="w" matchAway= "54"/>
+				<match id="67" typeHome="w" matchHome= "53" typeAway="w" matchAway= "55"/>
+				<match id="68" typeHome="w" matchHome= "56" typeAway="w" matchAway= "58"/>
+				<match id="69" typeHome="w" matchHome= "57" typeAway="w" matchAway= "59"/>
+				<match id="70" typeHome="w" matchHome= "60" typeAway="w" matchAway= "62"/>
+				<match id="71" typeHome="w" matchHome= "61" typeAway="w" matchAway= "63"/>
+			</round>
+			<round id="5">
+				<match id="72" typeHome="w" matchHome= "64" typeAway="w" matchAway= "66"/>
+				<match id="73" typeHome="w" matchHome= "65" typeAway="w" matchAway= "67"/>
+				<match id="74" typeHome="w" matchHome= "68" typeAway="w" matchAway= "70"/>
+				<match id="75" typeHome="w" matchHome= "69" typeAway="w" matchAway= "71"/>
+			</round>
+			<round id="6">
+				<match id="76" typeHome="w" matchHome= "72" typeAway="w" matchAway= "74"/>
+				<match id="77" typeHome="w" matchHome= "73" typeAway="w" matchAway= "75"/>
+			</round>
+			<round id="7">
+				<match id="78" typeHome="l" matchHome= "76" typeAway="l" matchAway= "77"/>
+			</round>
+			<round id="8">
+				<match id="79" typeHome="w" matchHome= "76" typeAway="w" matchAway= "77"/>
+			</round>
+		</rounds>
+	</format>
+	<format id="2" name="Cup48">
+		<teams>48</teams>
+		<groups>4</groups>
+		<rounds>	
+			<round id="0"/>
+		</rounds>
+	</format>
+	<format id="0" name="PremierLeague">
+		<teams>20</teams>
+		<groups>20</groups>
+		<rounds>	
+			<round id="0" func="GroupPhase"/> <!-- from 0 to 71 : all matches from all groups -->
+		</rounds>
+	</format>
+</formats>
