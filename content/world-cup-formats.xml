@@ -156,14 +156,14 @@
 			</round>
 		</rounds>
 	</format>
-	<format id="2" name="Cup48">
+	<format id="2" name="Cup48" repechage="True">
 		<teams>48</teams>
-		<groups>4</groups>
+		<groups>2</groups>
 		<rounds>	
 			<round id="0"/>
 		</rounds>
 	</format>
-	<format id="0" name="PremierLeague">
+	<format id="3" name="PremierLeague">
 		<teams>20</teams>
 		<groups>20</groups>
 		<rounds>	
