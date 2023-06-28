@@ -82,6 +82,10 @@ class WorldCup(Tornment):
         best_3rdA.compute()
         groups.append(best_3rdA)
 
+    def double_elimination(self, groups, matches, ranks, draw):
+        
+
+
     def run(self, rankgain=0, format="Cup48_4groups"):
 
         draw = Group(self.teams_list)
@@ -114,6 +118,8 @@ class WorldCup(Tornment):
                 # round 1 to round 3 moved to function
                 # index 0 - number of teams / index 1 - number of teams per group
                 self.group_func(groups, matches, ranks, draw)
+            elif func == "DoubleElimination":
+                self.double_elimination(groups, matches, ranks, draw)
             else:
                 if func == "compute":
                     self.compute(int(r.attrib['id']), groups, matches, draw)
