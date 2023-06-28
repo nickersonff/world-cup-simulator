@@ -32,6 +32,7 @@ class Params:
                   'Hungary',
                   'Ukraine',
                   'United States']
+    
     ranklist = {}
 
     def load_elo_rating(format="Cup48_4groups"):
