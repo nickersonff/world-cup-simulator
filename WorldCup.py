@@ -21,7 +21,6 @@ class WorldCup(Tornment):
                 mmm.result.play()
                 matches.append(mmm)
                 matid += 1
-        print(matid)
         self.compute_groups(groups, matches, draw)
 
     def compute_groups(self, groups, matches, draw):
@@ -82,8 +81,19 @@ class WorldCup(Tornment):
         best_3rdA.compute()
         groups.append(best_3rdA)
 
-    def double_elimination(self, groups, matches, ranks, draw):
-        
+    def double_elimination(self, groups, matches, ranks):
+        g = self.nteams//self.ngroup  # ex: 48 e 4 = 12
+        matid = 0
+        for ii in range(g):
+            grp = range(ii*self.ngroup, (ii+1)*self.ngroup)
+            for m in grp:
+                
+                if m<len(grp):
+                    mmm = Match(matid, ('p', 0, m*g), ('p', 0, m*g+1))
+                    mmm.setup(groups=groups, ranks=ranks)
+                    mmm.result.play()
+                    matches.append(mmm)
+                    matid += 1
 
 
     def run(self, rankgain=0, format="Cup48_4groups"):
@@ -119,7 +129,7 @@ class WorldCup(Tornment):
                 # index 0 - number of teams / index 1 - number of teams per group
                 self.group_func(groups, matches, ranks, draw)
             elif func == "DoubleElimination":
-                self.double_elimination(groups, matches, ranks, draw)
+                self.double_elimination(groups, matches, ranks)
             else:
                 if func == "compute":
                     self.compute(int(r.attrib['id']), groups, matches, draw)
@@ -142,7 +152,6 @@ class WorldCup(Tornment):
 
                 gstart.append(len(matches))
 
-        print(groups[1].position)
         self.matches = matches
         self.ranks = ranks
 
