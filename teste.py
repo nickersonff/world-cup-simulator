@@ -1,4 +1,3 @@
-import numpy as np
 from FormatReader import FormatReader
 from WorldCup import WorldCup
 from Params import Params
