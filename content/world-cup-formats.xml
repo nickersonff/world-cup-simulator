@@ -156,11 +156,11 @@
 			</round>
 		</rounds>
 	</format>
-	<format id="2" name="Cup48" repechage="True">
+	<format id="2" name="Cup48">
 		<teams>48</teams>
 		<groups>2</groups>
 		<rounds>	
-			<round id="0"/>
+			<round id="0" func="DoubleElimination"/>
 		</rounds>
 	</format>
 	<format id="3" name="PremierLeague">
