@@ -96,6 +96,7 @@ class WorldCup(Tornment):
         #           matid += 1
         cup = Cup48(self.teams_list, self.ranks)
         cup.run()
+        return cup
 
 
 
@@ -132,7 +133,8 @@ class WorldCup(Tornment):
                 # index 0 - number of teams / index 1 - number of teams per group
                 self.group_func(groups, matches, ranks, draw)
             elif func == "DoubleElimination":
-                self.double_elimination(groups, matches, ranks)
+                ccc = self.double_elimination(groups, matches, ranks)
+                matches = ccc.matches
             else:
                 if func == "compute":
                     self.compute(int(r.attrib['id']), groups, matches, draw)

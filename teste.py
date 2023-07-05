@@ -17,6 +17,7 @@ nn = 1000
 modelA_high = [0 for ii in range(nn)]
 modelB_high = [0 for ii in range(nn)]
 modelC_high = [0 for ii in range(nn)]
+print("running...")
 for ii in range(nn):
     ccc = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
     ccc.run(format="Cup48")
@@ -35,7 +36,8 @@ for ii in range(nn):
     ttt = ccc.match_type_dist()
     modelC_high[ii] = ttt['high']
 
+
 plt.hist(modelB_high, bins=np.arange(11)-0.5, color='k', alpha=0.5)
 plt.hist(modelA_high, bins=np.arange(11)-0.5, color='r', alpha=0.5)
 plt.hist(modelC_high, bins=np.arange(11)-0.5, color='b', alpha=0.5)
-
+plt.show()
