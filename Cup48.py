@@ -7,8 +7,8 @@ class Cup48(Tornment):
 
     def run(self, rankgain=0):
         draw = Group(self.teams_list)
-        draw.draw4()
-        # draw.draw()
+        #draw.draw4()
+        draw.draw()
         groups = [draw]
 
         if self.ranks == None:
