@@ -3,6 +3,7 @@ from Tournament import Tornment
 from Match import Match
 from FormatReader import FormatReader
 import itertools as iter
+from Cup48 import Cup48
 
 
 class WorldCup(Tornment):
@@ -82,17 +83,21 @@ class WorldCup(Tornment):
         groups.append(best_3rdA)
 
     def double_elimination(self, groups, matches, ranks):
-        g = self.nteams//self.ngroup  # ex: 48 e 4 = 12
-        matid = 0
-        for ii in range(g):
-            grp = range(ii*self.ngroup, (ii+1)*self.ngroup)
-            for m in grp:
-                if m<len(grp):
-                    mmm = Match(matid, ('p', 0, m*g), ('p', 0, m*g+1))
-                    mmm.setup(groups=groups, ranks=ranks)
-                    mmm.result.play()
-                    matches.append(mmm)
-                    matid += 1
+        #g = self.nteams//self.ngroup  # ex: 48 e 4 = 12
+        #matid = 0
+        #for ii in range(g):
+        #    grp = range(ii*self.ngroup, (ii+1)*self.ngroup)
+        #    for m in grp:
+        #        if m<len(grp):
+        #            mmm = Match(matid, ('p', 0, m*g), ('p', 0, m*g+1))
+        #            mmm.setup(groups=groups, ranks=ranks)
+        #            mmm.result.play()
+        #            matches.append(mmm)
+        #           matid += 1
+        cup = Cup48(self.teams_list, self.ranks)
+        cup.run()
+
+
 
 
     def run(self, rankgain=0, format="Cup48_4groups"):
@@ -104,7 +109,6 @@ class WorldCup(Tornment):
         self.ngroup = int(inf[1])
         self.nteams = int(inf[0])
         self.format = format
-        print(self.ngroup, self.nteams)
         draw.draw()
         groups = [draw]
         if self.ranks == None:
@@ -154,102 +158,3 @@ class WorldCup(Tornment):
         self.matches = matches
         self.ranks = ranks
 
-    def classify(self):  # alterar ??? #
-
-        self.classification = ['' for ii in self.teams_list]
-        self.classification[0] = self.matches[-1].result.winner
-        self.classification[1] = self.matches[-1].result.loser
-        self.classification[2] = self.matches[-2].result.winner
-        self.classification[3] = self.matches[-2].result.loser
-
-        mm = 4
-# Autria duplicada
-        myteams = [self.matches[ii].result.loser for ii in range(96, 100)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(88, 96)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(72, 88)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        inteams = [self.classification[ii] for ii in range(0, mm)]
-        myteams = [ii for ii in self.teams_list if ii not in inteams]
-
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-    def print_matches(self):  # errado, somente para o de grupo de 4
-        print('1st Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(0, 24)]
-        print('2nd Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(24, 48)]
-        print('3rd Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(48, 72)]
-        print('Round of 32')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(72, 88)]
-        print('Round of 16')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(88, 96)]
-        print('Quarters')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(96, 100)]
-        print('Semi-Final')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(100, 102)]
-        print('3rd Place')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(102, 103)]
-        print('Final')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(103, 104)]
-
-    def print_matches3(self):
-        print('1st Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(0, 16)]
-        print('2nd Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(16, 32)]
-        print('3rd Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(32, 48)]
-        print('Round of 32')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(48, 64)]
-        print('Round of 16')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(64, 72)]
-        print('Quarters')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(72, 76)]
-        print('Semi-Final')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(76, 78)]
-        print('3rd Place')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(78, 79)]
-        print('Final')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(79, 80)]
