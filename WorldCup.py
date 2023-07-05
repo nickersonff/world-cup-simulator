@@ -87,7 +87,6 @@ class WorldCup(Tornment):
         for ii in range(g):
             grp = range(ii*self.ngroup, (ii+1)*self.ngroup)
             for m in grp:
-                
                 if m<len(grp):
                     mmm = Match(matid, ('p', 0, m*g), ('p', 0, m*g+1))
                     mmm.setup(groups=groups, ranks=ranks)
