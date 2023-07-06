@@ -98,9 +98,6 @@ class WorldCup(Tornment):
         cup.run()
         return cup
 
-
-
-
     def run(self, rankgain=0, format="Cup48_4groups"):
 
         draw = Group(self.teams_list)
