@@ -9,8 +9,8 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 Params.load_elo_rating(format="Cup48")
-cup = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
-cup.run(format="Cup48")
+#cup = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
+#cup.run(format="Cup48")
 
 rankgain = 0.0
 nn = 1000
@@ -25,13 +25,11 @@ for ii in range(nn):
     modelA_high[ii] = ttt['high']
 
     ccc = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
-    # ccc.run(rankgain,ranklist)
     ccc.run(format="Cup48_3groups")
     ttt = ccc.match_type_dist()
     modelB_high[ii] = ttt['high']
 
     ccc = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
-    # ccc.run(rankgain,ranklist)
     ccc.run(format="Cup48_4groups")
     ttt = ccc.match_type_dist()
     modelC_high[ii] = ttt['high']

@@ -82,7 +82,7 @@ class WorldCup(Tornment):
         best_3rdA.compute()
         groups.append(best_3rdA)
 
-    def double_elimination(self, groups, matches, ranks):
+    def double_elimination(self):
         #g = self.nteams//self.ngroup  # ex: 48 e 4 = 12
         #matid = 0
         #for ii in range(g):
@@ -107,7 +107,7 @@ class WorldCup(Tornment):
         self.ngroup = int(inf[1])
         self.nteams = int(inf[0])
         self.format = format
-        draw.draw()
+        draw.draw(ngroup=self.ngroup)
         groups = [draw]
         if self.ranks == None:
             ranks = {}
@@ -130,7 +130,7 @@ class WorldCup(Tornment):
                 # index 0 - number of teams / index 1 - number of teams per group
                 self.group_func(groups, matches, ranks, draw)
             elif func == "DoubleElimination":
-                ccc = self.double_elimination(groups, matches, ranks)
+                ccc = self.double_elimination()
                 matches = ccc.matches
             else:
                 if func == "compute":
