@@ -1,3 +1,6 @@
+#
+#
+#
 from FormatReader import FormatReader
 from WorldCup import WorldCup
 from Params import Params
@@ -5,19 +8,16 @@ import itertools as iter
 import matplotlib.pyplot as plt
 import numpy as np
 
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
 
 Params.load_elo_rating(format="Cup48")
-#cup = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
-#cup.run(format="Cup48")
+
 
 rankgain = 0.0
 nn = 1000
 modelA_high = [0 for ii in range(nn)]
 modelB_high = [0 for ii in range(nn)]
 modelC_high = [0 for ii in range(nn)]
-print("running...")
+
 for ii in range(nn):
     ccc = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
     ccc.run(format="Cup48")

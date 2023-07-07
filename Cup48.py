@@ -7,7 +7,7 @@ class Cup48(Tornment):
 
     def run(self, rankgain=0):
         draw = Group(self.teams_list)
-        #draw.draw4()
+        # draw.draw4()
         draw.draw()
         groups = [draw]
 
@@ -163,103 +163,3 @@ class Cup48(Tornment):
 
         self.matches = matches
         self.ranks = ranks
-
-    def classify(self):
-
-        self.classification = ['' for ii in self.teams_list]
-        self.classification[0] = self.matches[95].result.winner
-        self.classification[1] = self.matches[95].result.loser
-        self.classification[2] = self.matches[94].result.winner
-        self.classification[3] = self.matches[94].result.loser
-
-        mm = 4
-
-        myteams = [self.matches[ii].result.loser for ii in range(90, 92)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(86, 90)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(80, 86)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(70, 78)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(54, 66)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-        mm = mm + len(myteams)
-
-        myteams = [self.matches[ii].result.loser for ii in range(36, 48)]
-        mygroup = Group(myteams, self.matches)
-        mygroup.compute()
-        for ii in range(len(myteams)):
-            self.classification[mm+ii] = mygroup.position[ii]
-
-    def print_matches(self):
-        print('1st Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(0, 24)]
-        print('2nd Round - Winners')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(24, 36)]
-        print('2nd Round - Loser')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(36, 48)]
-        print('3rd Round - Winners')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(48, 54)]
-        print('3rd Round - Losers')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(54, 66)]
-        print('Best of 16')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(66, 70)]
-        print('Repechage - 4th Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(70, 78)]
-        print('Quarters')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(78, 80)]
-        print('Repechage - 5th Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(80, 86)]
-        print('Repechage - 6th Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(86, 90)]
-        print('Repechage - 7th Round')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(90, 92)]
-        print('Semi-Final')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(92, 94)]
-        print('3rd Place')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(94, 95)]
-        print('Final')
-        [print(ii.result.teams)
-         for iix, ii in enumerate(self.matches) if iix in range(95, 96)]

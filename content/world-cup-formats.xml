@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <formats>
 	<format id="0" name="Cup48_4groups">
-		<teams>48</teams>
-		<groups>4</groups>
+		<teams>48</teams> <!-- how many teams in tournament -->
+		<groups>4</groups> <!-- how many teams in each group -->
 		<rounds>	
 			<round id="0" func="GroupPhase"/> <!-- from 0 to 71 : all matches from all groups -->
 			<round id="1"> <!-- start knockout phase : 1st and 2st from each group and 8 best 3th (group 13) -->

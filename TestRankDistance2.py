@@ -10,7 +10,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 Params.load_elo_rating(format="Cup48")
-rankgain = 0.7
+
 nn = 2500
 modelA_high = [0 for ii in range(nn)]
 modelB_high = [0 for ii in range(nn)]
@@ -45,40 +45,36 @@ for ii in range(nn):
     modelC_low[ii] = ttt['low']
 
 
-plt.hist(modelB_high,bins=np.arange(20)-0.5,color='k',alpha=0.5)
-plt.hist(modelA_high,bins=np.arange(20)-0.5,color='r',alpha=0.5)
-plt.hist(modelC_high,bins=np.arange(20)-0.5,color='b',alpha=0.5)
-print(np.mean(modelA_high))
-print(np.mean(modelB_high))
-print(np.mean(modelC_high))
-print(np.mean(modelA_high)/np.mean(modelB_high))
-print(np.mean(modelA_high)/np.mean(modelC_high))
+plt.hist(modelB_high, bins=np.arange(20)-0.5, color='k', alpha=0.5)
+plt.hist(modelA_high, bins=np.arange(20)-0.5, color='r', alpha=0.5)
+plt.hist(modelC_high, bins=np.arange(20)-0.5, color='b', alpha=0.5)
 plt.show()
 
 plt.figure(figsize=(8, 4))
 
-kde = KernelDensity(kernel="gaussian", bandwidth=0.75).fit(np.array(modelA_high)[:,np.newaxis])
+kde = KernelDensity(kernel="gaussian", bandwidth=0.75).fit(
+    np.array(modelA_high)[:, np.newaxis])
 X_plot = np.linspace(0, 15, 1000)[:, np.newaxis]
 log_dens = kde.score_samples(X_plot)
-plt.plot(X_plot,np.exp(log_dens)*100,'r',label='Double elimination')
-kde = KernelDensity(kernel="gaussian", bandwidth=0.75).fit(np.array(modelB_high)[:,np.newaxis])
+plt.plot(X_plot, np.exp(log_dens)*100, 'r', label='Double elimination')
+kde = KernelDensity(kernel="gaussian", bandwidth=0.75).fit(
+    np.array(modelB_high)[:, np.newaxis])
 X_plot = np.linspace(0, 15, 1000)[:, np.newaxis]
 log_dens = kde.score_samples(X_plot)
-plt.plot(X_plot,np.exp(log_dens)*100,'k',label='Group of 3')
-kde = KernelDensity(kernel="gaussian", bandwidth=0.75).fit(np.array(modelC_high)[:,np.newaxis])
+plt.plot(X_plot, np.exp(log_dens)*100, 'k', label='Group of 3')
+kde = KernelDensity(kernel="gaussian", bandwidth=0.75).fit(
+    np.array(modelC_high)[:, np.newaxis])
 X_plot = np.linspace(0, 15, 1000)[:, np.newaxis]
 log_dens = kde.score_samples(X_plot)
-plt.plot(X_plot,np.exp(log_dens)*100,'k--',label='Group of 4')
+plt.plot(X_plot, np.exp(log_dens)*100, 'k--', label='Group of 4')
 
 for pos in ['right', 'top', 'bottom', 'left']:
-   plt.gca().spines[pos].set_visible(False)
+    plt.gca().spines[pos].set_visible(False)
 
 plt.xlabel('Number of Matches')
-plt.ylabel('Probability (%)') 
+plt.ylabel('Probability (%)')
 plt.title('Number of TOP matches (2 TOP8 teams)')
 
-plt.xlim(-0.5,10.5)
-plt.legend() 
+plt.xlim(-0.5, 10.5)
+plt.legend()
 plt.show()
-
-

@@ -15,7 +15,6 @@ class Tornment:
         for mm in self.matches:
             rkk1 = self.ranks[mm.result.teams[0]]['rank']
             rkk2 = self.ranks[mm.result.teams[1]]['rank']
-            #print("rankings: ", rkk1, rkk2)
             if (rkk1 < 8 and rkk2 < 8):
                 match_type['high'] = match_type['high'] + 1
             elif (rkk1 >= 8 and rkk2 >= 8):

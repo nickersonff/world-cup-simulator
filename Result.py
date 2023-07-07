@@ -34,10 +34,8 @@ class Result:
         self.goals = np.random.poisson(1.5, size=2)
         lamb0 = Params.ALFA * (float(self.ranks[0]['elo-rating'])
                                / (float(self.ranks[0]['elo-rating']) + float(self.ranks[1]['elo-rating'])))
-        # print(lamb0)
         lamb1 = Params.ALFA * (self.ranks[1]['elo-rating'] / (self.ranks[0]
                                                               ['elo-rating'] + self.ranks[1]['elo-rating']))
-        # print(lamb1)
         self.goals[0] = np.random.poisson(lamb0)
         self.goals[1] = np.random.poisson(lamb1)
 
