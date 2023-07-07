@@ -110,7 +110,7 @@
 				<match id="46" typeHome="p" groupHome= "0" teamHome="43" typeAway="p" groupAway= "0" teamAway="44"/>
 				<match id="47" typeHome="p" groupHome= "0" teamHome="46" typeAway="p" groupAway= "0" teamAway="47"/>
 			</round>
-			<round id="3" func="compute">
+			<round id="3" func="compute"> <!-- here use de compute function for calculate results for the previous matches-->
 				<match id="48" typeHome="p" groupHome= "1" teamHome="0" typeAway="p" groupAway= "2" teamAway="1"/>
 				<match id="49" typeHome="p" groupHome= "2" teamHome="0" typeAway="p" groupAway= "1" teamAway="1"/>
 				<match id="50" typeHome="p" groupHome= "3" teamHome="0" typeAway="p" groupAway= "4" teamAway="1"/>
@@ -160,14 +160,7 @@
 		<teams>48</teams>
 		<groups>4</groups>
 		<rounds>	
-			<round id="0" func="DoubleElimination"/>
-		</rounds>
-	</format>
-	<format id="3" name="PremierLeague">
-		<teams>20</teams>
-		<groups>20</groups>
-		<rounds>	
-			<round id="0" func="GroupPhase"/> <!-- from 0 to 71 : all matches from all groups -->
+			<round id="0" func="DoubleElimination"/> <!-- run specific format defined by Cup48 class -->
 		</rounds>
 	</format>
 </formats>
