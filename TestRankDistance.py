@@ -8,22 +8,22 @@ import itertools as iter
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+# use this function to load initial parameters from content path for specific cup format name
 Params.load_elo_rating(format="Cup48")
 
-
-rankgain = 0.0
 nn = 1000
 modelA_high = [0 for ii in range(nn)]
 modelB_high = [0 for ii in range(nn)]
 modelC_high = [0 for ii in range(nn)]
 
 for ii in range(nn):
+    # instantiate the WorldCup class to run simulation in particular cup format
     ccc = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
     ccc.run(format="Cup48")
     ttt = ccc.match_type_dist()
     modelA_high[ii] = ttt['high']
 
+    # diferent formats can be used to compare the results
     ccc = WorldCup(teams_list=Params.teams_list, ranks=Params.ranklist)
     ccc.run(format="Cup48_3groups")
     ttt = ccc.match_type_dist()
